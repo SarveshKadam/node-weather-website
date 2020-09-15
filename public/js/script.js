@@ -20,10 +20,8 @@ weatherform.addEventListener('submit',(e)=>{
 
     fetch('/weather?address=' + location).then((response)=>{
     response.json().then((data)=>{
-        console.log(data)
         if(data.error){
-            console.log("Error has happened");
-            messageone.textContent = JSON.stringify(data.error)
+            messageone.textContent = data.error
         }else{
         messageone.textContent = data.location
         messagetwo.textContent= data.forecast
